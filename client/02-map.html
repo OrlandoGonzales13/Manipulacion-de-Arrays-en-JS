@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Contenedor donde se van a insertar los productos -->
+    <div id="app"></div>
+
+    <script>
+        const products = [
+            { title: 'Burger', price: 121 },
+            { title: 'Pizza', price: 60 }
+        ];
+        const app = document.getElementById('app');
+
+        // Usamos el método map para crear un nuevo array que contiene la representación HTML de cada producto
+        const list = products.map(product => {
+            // Por cada producto, devolvemos un elemento de lista (<li>) que muestra su título y precio
+            return `<li>${product.title} - ${product.price}</li>`;
+        });
+
+        // Unimos todos los elementos del array 'list' en una sola cadena y la asignamos al innerHTML del elemento 'app'
+        app.innerHTML = list.join('');
+
+
+        console.log('ORIGINAL: ' + products)
+        console.log('PRECIO: ' + list)
+
+    </script>
+
+</body>
+
+</html>
