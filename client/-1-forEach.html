@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+</head>
+
+<body>
+    <!-- Contenedor donde se van a insertar los productos -->
+    <div id="app"></div>
+    <div id="app2"></div>
+    <script>
+        // Definimos un array de productos, cada producto tiene un título y un precio
+        const products = [
+            { title: 'Burger', price: 121 },
+            { title: 'Pizza', price: 60 }
+        ];
+        // Seleccionamos el div con id="app" donde se mostrará la lista de productos
+        const app = document.getElementById('app');
+        // Iteramos sobre cada producto en el array
+        products.forEach(product => {
+            // Para cada producto, añadimos un elemento <li> al contenedor 'app' con su título y precio
+            app.innerHTML += `<li>${product.title} - ${product.price}</li>`;
+        });
+
+        //RETO------------------------------- ARRAY DE TAREAS RENDERIZADO
+
+        const tasks = [
+            { title: 'Complete JavaScript course', completed: true },
+            { title: 'Write project report', completed: false },
+            { title: 'Update portfolio website', completed: true },
+            { title: 'Read 20 pages of a book', completed: false },
+            { title: 'Go for a run', completed: true }
+        ];
+
+        const app2 = document.getElementById('app2');
+
+        tasks.forEach(({ title, completed }) => {
+            app2.innerHTML += `
+                 <li>
+          	 <input 
+                     type='checkbox' 
+                     id='${title}' 
+                     name='${title}' 
+                     ${completed && 'checked'} />
+                  <label for='${title}' >${title} </label>   
+         </li>`;
+
+        });
+
+    </script>
+</body>
+
+</html>
